@@ -21,7 +21,7 @@ def semiEmpiricalBindingEnergyFit(X, a_v, a_s, a_c, a_sym, a_p):
 
     delta = np.array([1 if (A[i] % 2 == 0) and (Z[i] % 2 == 0) else -1 if (A[i] % 2 != 0) and (Z[i] % 2 != 0) else 0 for i in range(len(A))]) # make array of +1 or -1 or 0 for even or odd A and Z
 
-    binding_energy = a_v*A - a_s*A**(2/3) - a_c*Z*(Z-1)*A**(-1/3) - a_sym*(A-2*Z)**2/A + delta*a_p*A**(-3/4)
+    binding_energy = a_v*A - a_s*A**(2/3) - a_c*Z*(Z-1)*A**(-1/3) - a_sym*(A-2*Z)**2/A + delta*a_p*A**(-3/4) # calculate binding energy
     
     return binding_energy
 
